@@ -13973,7 +13973,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="Sparkify-Churn-Analysis">Sparkify Churn Analysis<a class="anchor-link" href="#Sparkify-Churn-Analysis">&#182;</a></h1><h2 id="Project-Definition">Project Definition<a class="anchor-link" href="#Project-Definition">&#182;</a></h2><p>Here we analyse a simulated event log file from a fictional Spotify-like music streaming service called Sparkify, in an attempt to predict which users churned. We define churn as a user on paid subscription downgrading to free subscription, or cancelling the service altogether.</p>
 <p>Specifically, we will attempt to predict whether a given user churned during the 2 months covered by the data, based on their activity during this period. We will explore and clean the data, engineer any needed features, and train several classification models to determine which is best suited to the task.</p>
-<p>Precision and recall will both be important, so the models will be evaluated based on their F-score. For example, it would be useful for a marketing department to receive a list of users likely to churn, so that a marketing intervention could take place. However, it would not be so useful if the list included lots of users who were not likely to churn, potentially incurring unnecesary expense.</p>
+<p>Precision and recall will both be important, so the models will be evaluated based on their F-score. For example, it would be useful for a marketing department to receive a list of users likely to churn, so that a marketing intervention could take place. However, it would not be so useful if the list included lots of users who were not likely to churn, potentially incurring unnecessary expense.</p>
 <p>This project is a capstone project from the Udacity Data Scientist nanodegree, and the data is provided by Udacity.</p>
 <h2 id="Setup">Setup<a class="anchor-link" href="#Setup">&#182;</a></h2><p>This notebook will complete analysis of the full dataset in approximately 25 minutes using the setup specified here. The notebook was run on an Amazon Web Services EMR cluster with the following advanced options:</p>
 <ul>
@@ -14355,7 +14355,7 @@ var element = document.getElementById('9f88b729-421a-42e8-9bda-ec59dca0619d');
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Exploratory-Data-Analysis">Exploratory Data Analysis<a class="anchor-link" href="#Exploratory-Data-Analysis">&#182;</a></h2><p>We explore the structure of the data, consider how to summarise the data in each column as features for the model, and establish what cleaning might be necesary. If the full dataset is loaded, we explore a sample of this.</p>
+<h2 id="Exploratory-Data-Analysis">Exploratory Data Analysis<a class="anchor-link" href="#Exploratory-Data-Analysis">&#182;</a></h2><p>We explore the structure of the data, consider how to summarise the data in each column as features for the model, and establish what cleaning might be necessary. If the full dataset is loaded, we explore a sample of this.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -21074,8 +21074,8 @@ var element = document.getElementById('71c11925-4fa3-421d-9718-3bb4915ea672');
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Data-Cleaning">Data Cleaning<a class="anchor-link" href="#Data-Cleaning">&#182;</a></h2><p>We will need to remove rows for users that are logged out or guests, as by definition they cannot churn.</p>
-<p>We will only need to keep the <code>artist</code>, <code>page</code>, <code>registration</code>, <code>ts</code> and <code>userId</code> columns for our analysis. However we will need those columns other than <code>artist</code> to contain values, so will drop any rows containing missing data in them.</p>
-<p>We will also now repartition the data by user as we will regularly be joining on this column.</p>
+<p>We can drop the <code>firstName</code>, <code>itemInSession</code>, <code>location</code>, <code>method</code>, <code>status</code> and <code>userAgent</code> columns from our analysis. However we will need those columns other than <code>artist</code> to contain values, so will drop any rows containing missing data in them.</p>
+<p>We will also repartition the data by user as we will regularly be joining on this column.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -21405,7 +21405,7 @@ var element = document.getElementById('eec2aed0-4f6d-4098-b6e8-e80f99968ad2');
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Feature-Engineering">Feature Engineering<a class="anchor-link" href="#Feature-Engineering">&#182;</a></h2><p>We will aggregate and analyse the data by user, and explore whether a principal component analysis of the artist preferences will yield useful features.</p>
+<h2 id="Feature-Engineering">Feature Engineering<a class="anchor-link" href="#Feature-Engineering">&#182;</a></h2><p>We will aggregate and analyse the data by user.</p>
 <p>Our features at this stage will incorporate, per user:</p>
 <ul>
 <li>total number visits to the following pages<ul>
@@ -22149,7 +22149,7 @@ var element = document.getElementById('975a6725-0fdb-429d-9346-1ddc11b6fb7b');
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Improved-Model">Improved Model<a class="anchor-link" href="#Improved-Model">&#182;</a></h2><h3 id="Pipeline">Pipeline<a class="anchor-link" href="#Pipeline">&#182;</a></h3><p>We build a pipeline to compare a logistic regression, a random forest classifier, and a gradient boosted tree classifier, each with three combinations of hyperparameters.</p>
+<h2 id="Improved-Model">Improved Model<a class="anchor-link" href="#Improved-Model">&#182;</a></h2><h3 id="Pipeline">Pipeline<a class="anchor-link" href="#Pipeline">&#182;</a></h3><p>We build a pipeline to compare a logistic regression, a random forest classifier, and a gradient boosted tree classifier, each with five combinations of hyperparameters.</p>
 <p>N.B. Rather than a grid search which would entail a great number of combinations of hyperparameters and thus long execution time, we would ideally implement a random search entailing 60 combinations, as suggested by James Bergstra and Yoshua Bengio at <a href="https://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf">https://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf</a>. Here, we try only five combinations per classifier, for faster execution, and we handpick the parameter values to ensure coverage across the spread of possible values. This isn't really enough combinations to reliably find an model close to the optimum, but a greater number of truly randomised combinations could easily be added for a more thorough search of hyperparameter space.</p>
 
 </div>
@@ -23199,7 +23199,7 @@ KeyError: &#39;jobGroup&#39;
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>With <code>thumbs_diff_prop</code> and <code>avf_played_under_half</code> both amongst the most important features, it seems that the most influential factor on whether a user will churn is how much they like the music.</p>
+<p>With <code>thumbs_diff_prop</code> and <code>avg_played_under_half</code> both amongst the most important features, it seems that the most influential factor on whether a user will churn is how much they like the music.</p>
 <p>The number of adverts played is also influential, and previous visits to the downgrade page indicate churn may be imminent.</p>
 <p>Interestingly, features relating to the number of songs played were the least influential factors.</p>
 
