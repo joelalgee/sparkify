@@ -73,3 +73,7 @@ It turned out that users' enjoyment or otherwise of the music was an influential
 The number of ads that were played was also influential, and users that had already visited the downgrade page in the past were more likely to go back and complete the action.
 
 Overall usage in terms of number of songs played was not particularly influential.
+
+## Accompanying Blog Post
+
+You can [read an accompanying blog post for this project here](https://joelalgee.medium.com/sparkify-churn-analysis-85a3e9e3f83c).
