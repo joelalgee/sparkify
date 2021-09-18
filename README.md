@@ -7,7 +7,7 @@ Here we use Pyspark on an AWS EMR cluster to analyse a simulated event log file 
 
 Specifically, we attempt to predict whether a given user churned during the 2 months covered by the data, based on their activity during this period. We explore and clean the data, engineer any needed features, and train several classification models to determine which is best suited to the task.
 
-Precision and recall are both important, so the models are evaluated based on their F-score. For example, it would be useful for a marketing department to receive a list of users likely to churn, so that a marketing intervention could take place. However, it would not be so useful if the list included lots of users who were not likely to churn, potentially incurring unnecesary expense.
+Precision and recall are both important, so the models are evaluated based on their F-score. For example, it would be useful for a marketing department to receive a list of users likely to churn, so that a marketing intervention could take place. However, it would not be so useful if the list included lots of users who were not likely to churn, potentially incurring unnecessary expense.
 
 This project is a capstone project from the [Udacity Data Scientist nanodegree](https://www.udacity.com/course/data-scientist-nanodegree--nd025), and the data is provided by Udacity.
 
