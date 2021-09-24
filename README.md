@@ -1,4 +1,4 @@
-# Sparkify Churn Analysis
+# Sparkify Churn Prediction
 Predicting user churn for a music subscription service, using Pyspark on an AWS EMR cluster
 
 ## Summary
