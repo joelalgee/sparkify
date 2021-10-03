@@ -1,4 +1,5 @@
-# Sparkify Churn Prediction
+# Sparkify Churn Prediction - September 2021
+
 Predicting user churn for a music subscription service, using Pyspark on an AWS EMR cluster
 
 ## Summary
